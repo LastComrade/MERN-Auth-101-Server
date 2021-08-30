@@ -11,7 +11,7 @@ const auth = {
       const user = await User.findOne({ email });
       if (!user) {
         const registertoken = registerToken(name, email);
-        const activationUrl = `http://localhost:3000/activate-account/${registertoken}`;
+        const activationUrl = `https://mern-auth-101.netlify.app/activate-account/${registertoken}`;
         const message = `
         <h1>Acitave Account</h1>
         <p>Please click this link to acitvate your account</p>
@@ -72,7 +72,7 @@ const auth = {
       }
       const resetToken = user.getResetPasswordToken();
       await user.save();
-      const resetUrl = `http://localhost:3000/password-reset/${resetToken}`;
+      const resetUrl = `https://mern-auth-101.netlify.app/password-reset/${resetToken}`;
       const message = `
         <h1>Reset Password</h1>
         <p>Please go to this link to reset your password</p>
